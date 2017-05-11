@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="keywords" content="Eason Fan ">
+    <meta name="description" content="Eason Fan">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.0,user-scalable=0,minimum-scale=0.5">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+    <title>Eason Fan</title>
+    <link rel="stylesheet" href="./css/style.css"  media="all"/>
+    <link rel="stylesheet" type="text/css" href="./css/swiper-3.4.1.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/animate.css" >
+    <!-- <link rel="stylesheet" type="text/css" href="./css/normalize.css" > -->
+    <link rel="icon" href="./images/favicon.ico">
+    <script type="text/javascript" src="./js/jquery-1.8.2.min.js"></script>
+    <script src="./js/swiper-3.4.1.jquery.min.js"></script>
+    <script type="text/javascript" src="./js/vue.min.js"></script>
+    <script type="text/javascript" src="./js/app.min.js"></script>
+    <script type="text/javascript" src="./js/vue-router.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.smooth-scroll.min.js"></script>
+
+
+    <!-- <script type="text/javascript" src="./js/jquery.nicescroll.min.js"></script> -->
+</head>
+
+<script type="text/javascript">
+    document.oncontextmenu = function (e) { return false; } 
+    var omitformtags = ["input", "textarea", "select"]
+    omitformtags = omitformtags.join("|")
+    function disableselect(e) {
+        if (omitformtags.indexOf(e.target.tagName.toLowerCase()) == -1)
+            return false
+    }
+    function reEnable() {
+        return true
+    }
+    if (typeof document.onselectstart != "undefined")
+        document.onselectstart = new Function("return false")
+    else {
+        document.onmousedown = disableselect
+        document.onmouseup = reEnable
+    } 
+</script>
+
+
+
+<style type="text/css">
+    * {
+ /*       margin: 0 auto;
+        padding: 0;*/
+        /*list-style: none;*/
+        font-family: "Roboto Condensed",Helvetica,Arial,sans-serif;
+    }
+
+    @font-face {
+      font-family: 'regular';
+      src:
+        url('./images/fonts/regular.eot') format('embedded-opentype'),
+        url('./images/fonts/regular.woff') format('woff'),
+        url('./images/fonts/regular.ttf') format('truetype'),
+        url('./images/fonts/regular.svg') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+
+
+    
+</style>
+
+<body>
+    <div id="box">
+        <nav>
+          <div class='nav-open-btn'>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+          <ul class='nav-display'>
+            <li>
+                <a v-link="{path:'/home'}"  class="link-button " >
+                    Me
+                </a>
+            </li>
+            <li>
+                <a v-link="{path:'/resume'}"  class="link-button " >
+                    Resume
+                </a>
+            </li>
+            <li>
+                <a v-link="{path:'/about'}"  class="link-button " >
+                    About Me
+                </a>
+            </li>
+          </ul>
+        </nav>
+         <router-view></router-view>
+    </div>
+
+
+    <template id="home">
+        <div class="content">
+          <div class='personal-info'>
+              <div class='photo'>
+                <img src="./images/profile.jpg" class="profile-pic" alt="Lucy Bain" />
+              </div>
+              <h1 class='blurb' style="font-family: '';">
+                Hello, I’m Eason!
+              </h1>
+            </div>
+        </div>
+    </template>
+
+
+     <template id="resume">
+        <div class="content">
+          <div class='personal-details'>
+          <h1>Eason Fam</h1>
+          <p><a href="https://easonfan.github.io/#!/resume" class="website-link">easonfan.github.io</a></p>
+        </div>
+        <section class='category overview'>
+          <div class='two-part-title'>
+            <h2 class='category-title category-title-overview' style="color: #313947">
+            Overview
+             </h2>
+            <a class='download-link link-button' id="download-link" download='' href='./樊俊杰-前端开发工程师-简历.pdf'>Download resume</a>
+          </div>
+          <div class='item item-overview'>
+            <p>
+             扎根上海的前端工程师，对技术持续好奇，对工作充满热情，对未来保持信心。
+             <br>
+             <br>
+             主攻前端，1年+前端开发经验，大学半科班(信管专业)出身，毕业之后工作于某互金平台，完成了公司PC及H5端产品的多版本迭代，配合完成多次活动页面的响应式开发，也曾带领小组团队进行某电商项目的重构与开发。勇于学习最新技术，并积极思考该技术在公司现有框架内实现的可行性，及时解决业务快速发展过程中的各种业务场景问题，熟悉客户端开发，了解H5跨平台交互，有团队协作经验。
+            <br>
+            <br>
+            <font style="font-size: 14px;">技能评价：JavaScript - 熟练, HTML(5) - 熟练, CSS(3) - 熟练, Git - 熟练, PHP - 掌握, Vue.js - 掌握, webpack - 了解, Node.js - 了解</font>
+
+
+          </div>
+        </section>
+        <section class='category experience'>
+          <h2 class='category-title'>Experience</h2>
+          <div class='item'>
+            <div class='target-border'>
+              <div class='target-dot'></div>
+            </div>
+            <div class='titles'>
+              <h3 class='item-company-title'>上海民爱互联网金融信息服务有限公司</h3>
+              <span class='item-personal-title'>Web Developer</span>
+            </div>
+            <div class='item-date'>March 2016 - current</div>
+            <p class='item-key-tech'>
+              JavaScript, HTML(5), CSS(3), PHP, Vue.js, Node.js
+            </p>
+            <ul class='item-personal-details'>
+              <li>根据设计稿和产品文档进行官网页面的开发，确保良好的交互体验和数据展示；</li>
+              <li>设计并遵循团队前端开发规范，保证代码的规范化，语义化以及可维护性；</li>
+              <li>完成PC及H5端响应式活动页面的开发，并利用WebViewJavascriptBridge等技术实现H5页面与原生Android，IOS APP的交互；</li>
+              <li>配合产品经理，实现产品UI和交互的优化，最大程度提升用户体验；</li>
+              <li>根据公司的需求，利用Vue.js等技术完成电商网站及养生网站的开发；</li>
+            </ul>
+          </div>
+          <div class='page-break'></div>
+        </section>
+         <section class='category project'>
+          <h2 class='category-title'>Project</h2>
+          <div class='item'>
+            <div class='target-border'>
+              <div class='target-dot'></div>
+            </div>
+            <div class='titles'>
+              <h3 class='item-company-title'>Web Developer</h3>
+              <span class='item-personal-title'>民爱贷, 民爱</span>
+            </div>
+            <div class='item-date'>March 2016 - current</div>
+            <ul class='item-personal-details'>
+              <li>根据设计稿和产品文档进行互联网金融产品官网页面的开发，在确保数据的精确交互和展示的同时确保良好的交互体验(PC端:<a href="https://www.minaiw.com/" target="_blank">https://www.minaiw.com/</a> H5端:<a href="https://www.minaiw.com/wap " target="_blank">https://www.minaiw.com/wap</a>)；</li>
+              <li>完成PC及H5端响应式活动页面的开发，并实现H5页面与原生APP之间的数据交互及APP页面跳转(春节烟花活动:<a href="https://www.minaiw.com/wap/index.php?ctl=firework" target="_blank">https://www.minaiw.com/wap/index.php?ctl=firework</a>)；</li>
+              <li>配合产品及业务需求，及时对产品进行优化，最大程度提升用户体验；</li>
+              <li>期间共完成四次大型产品迭代，两次金融产品支付功能升级(更换合作商及上线资金托管)，多次金融产品功能模块开发(如红包，加息券，活动商城等)以及多次月度／节日活动页面的开发；</li>
+            </ul>
+          </div>
+          <div class='item'>
+            <div class='target-border'>
+              <div class='target-dot'></div>
+            </div>
+            <div class='titles'>
+              <h3 class='item-company-title'>Group Leader</h3>
+              <span class='item-personal-title'>么么搭, 项山</span>
+            </div>
+            <div class='item-date'>Dec 2016 - Jan 2017 </div>
+            <ul class='item-personal-details'>
+              <li>根据公司的业务需求，接手电商项目的重构与开发，完成网站的前端页面并与后端进行数据交互(<a href="http://92mmd.com/" target="_blank">http://92mmd.com/</a>)</li>
+              <li>作为Group Leader，根据功能模块划分及现有团队情况分析，与产品配合，完善项目WBS等各种文档，保证项目阶段性目标的及时完成；</li>
+            </ul>
+          </div>
+          <div class='item'>
+            <div class='target-border'>
+              <div class='target-dot'></div>
+            </div>
+            <div class='titles'>
+              <h3 class='item-company-title'>Web Developer</h3>
+              <span class='item-personal-title'>项山, 项山</span>
+            </div>
+            <div class='item-date'>Dec 2016 - current</div>
+            <ul class='item-personal-details'>
+              <li>根据公司的业务需求，完成集团官网，校园网红项目以及养生项目的页面开发；</li>
+              <li>淘星派校园网红项目的前端页面响应式页面的开发，并完成报名流程的前后端交互；(<a href="http://xiangshansh.com/school/" target="_blank">http://xiangshansh.com/school/</a>)</li>
+              <li>项山集团官网页面及项山网络科技官网的静态页面的开发；(<a href="http://xiangshansh.com/xiangshan/" target="_blank">http://xiangshansh.com/xiangshan/</a>)</li>
+              <li>合作公司沐杉养生项目的响应式页面的开发，期间使用了vue.js实现single page application；(<a href="http://xiangshansh.com/mushan/" target="_blank">http://xiangshansh.com/mushan/</a>)</li>
+            </ul>
+          </div>     
+          <div class='page-break'></div>     
+        </section>
+
+
+        <section class='category education'>
+          <h2 class='category-title'>Education</h2>
+          <div class='item'>
+            <div class='target-border'>
+              <div class='target-dot'></div>
+            </div>
+            <div class='titles wrap'>
+              <h3 class='item-company-title'>上海海洋大学 & University of Tasmania (中澳联合办学)</h3>
+              <span class='item-personal-title'>信息系统与信息管理</span>
+            </div>
+            <div class='item-date'>Sep 2012 - July 2016</div>
+            <p>主要课程:</p>
+            <ul class='item-personal-details'>
+              <li>网页开发，数据库（Mysql&Oracle）语言，C语言，JAVA及PHP等开发语言课程；</li>
+              <li>商业信息系统、信息系统项目、商业规划信息管理、系统开发、管理信息系统、决策支持系统、环境管理学、自然区域管理、信息系统项目管理；</li>
+            </ul>
+          </div>
+        </section>
+       
+
+        </div>
+
+
+    </template>
+
+
+    <script>
+      $('nav .nav-open-btn').on('click', function(){
+        $('nav .nav-display').toggleClass('open');
+      })
+
+      $(window).resize(function(){
+        if ($(window).width()>=415) {
+            $('nav .nav-display').removeClass('open');
+        }
+      })
+    </script>
+
+
+    <script>
+        //1. 准备一个根组件
+        var App=Vue.extend();
+
+        //2. Home News组件都准备
+        var Home=Vue.extend({
+            template:'#home',
+            ready:function(){
+                $('body').css('background','#752423');
+            }
+        });
+
+        var Resume=Vue.extend({
+            template:'#resume',
+            ready:function(){
+                $('body').css('background','');
+                $('body').addClass('resume');
+                if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                    $('#download-link').hide();
+                }else{
+                    $('#download-link').css('display','');
+                }
+
+                $(window).resize(function(){
+                    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                        $('#download-link').hide();
+                    }else{
+                        $('#download-link').css('display','');
+                    } 
+                })
+
+
+            }
+        });
+
+        var About=Vue.extend({
+            template:'#about',
+            ready:function(){
+                $('body').css('background','');
+            }
+        });
+
+
+        //3. 准备路由
+        var router=new VueRouter();
+
+        //4. 关联
+        router.map({
+            'home':{
+                component:Home
+            },
+            'resume':{
+                component:Resume
+            },
+            'about':{
+                component:About
+            }
+        });
+
+        //5. 启动路由
+        router.start(App,'#box');
+
+        //6. 跳转
+        router.redirect({
+            '/':'home'
+        });
+    </script>
+
+
+    <script type="text/javascript">
+    SmoothScroll( { keyboardSupport: true, stepSize: 50 } )
+    </script>
+
+
+
+
+    
+
+
+</body>
+</html>
